@@ -1,5 +1,17 @@
 import React from "react";
-
+import {
+  FaWhatsapp,
+  FaFacebookF,
+  FaInstagram,
+  FaTwitter,
+  FaLinkedinIn,
+  FaMediumM,
+  FaCodepen,
+  FaQuora,
+  FaSlack,
+  FaGithub,
+  FaYoutube,
+} from "react-icons/fa";
 const Footer = () => {
   const socialLinks = [
     { icon: FaWhatsapp, url: "https://wa.me/yourwhatsapp" },

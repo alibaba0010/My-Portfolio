@@ -3,19 +3,11 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
-  FaWhatsapp,
-  FaFacebookF,
-  FaInstagram,
-  FaTwitter,
-  FaLinkedinIn,
-  FaMediumM,
-  FaCodepen,
-  FaQuora,
-  FaSlack,
-  FaGithub,
-  FaYoutube,
   FaComments,
   FaTimes,
+  FaEnvelope,
+  FaPhone,
+  FaMapMarkerAlt,
 } from "react-icons/fa";
 
 function Contact() {
@@ -52,16 +44,32 @@ function Contact() {
     }));
   };
 
+  const contactInfo = [
+    {
+      icon: FaEnvelope,
+      title: "Email Me",
+      content: "victorpianwi@gmail.com",
+      href: "mailto:victorpianwi@gmail.com",
+    },
+    {
+      icon: FaPhone,
+      title: "Call Me",
+      content: "+234 814 775 9771",
+      href: "tel:+2348147759771",
+    },
+    {
+      icon: FaMapMarkerAlt,
+      title: "Address",
+      content:
+        "No. 1 Michael Amadi Street, New Layout, Eliozu, Port Harcourt, Rivers State",
+      href: "https://maps.google.com/?q=No. 1 Michael Amadi Street, New Layout, Eliozu, Port Harcourt, Rivers State",
+    },
+  ];
+
   return (
     <section className="relative py-20">
       {/* Background Image */}
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-5"
-        style={{
-          backgroundImage:
-            'url("https://hebbkx1anhila5yf.public.blob.vercel-storage.com/b-2OmpSxrNQqA8xxZgOjAIEf19Gh3fBJ.png")',
-        }}
-      />
+      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-5" />
 
       <div className="container mx-auto px-4 relative">
         <motion.div
