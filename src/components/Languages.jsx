@@ -2,34 +2,37 @@ import { motion } from "framer-motion";
 import {
   SiHtml5,
   SiCss3,
-  SiBootstrap,
+  SiTailwindcss,
   SiJavascript,
-  SiJquery,
   SiReact,
   SiSolidity,
-  SiFlutter,
-  SiDart,
-  SiPhp,
-  SiMysql,
+  SiDocker,
+  SiNextdotjs,
+  SiKubernetes,
   SiNodedotjs,
   SiMongodb,
+  SiExpress,
+  SiNestjs,
+  SiPostgresql
 } from "react-icons/si";
-
+import { FaAws } from "react-icons/fa";
 function Languages() {
   const technologies = [
     { icon: SiHtml5, name: "HTML", color: "#E44D26" },
     { icon: SiCss3, name: "CSS", color: "#1572B6" },
-    { icon: SiBootstrap, name: "Bootstrap", color: "#7952B3" },
+    { icon: SiTailwindcss, name: "Tailwind CSS", color: "#06B6D4" },
     { icon: SiJavascript, name: "JavaScript", color: "#F7DF1E" },
-    { icon: SiJquery, name: "jQuery", color: "#0769AD" },
+    { icon: SiExpress, name: "Express", color: "#000000" },
+    { icon: SiNestjs, name: "NestJS", color: "#E0234E" },
+    { icon: SiPostgresql, name: "PostgreSQL", color: "#336791" },
     { icon: SiReact, name: "React", color: "#61DAFB" },
     { icon: SiSolidity, name: "Solidity", color: "#363636" },
-    { icon: SiFlutter, name: "Flutter", color: "#02569B" },
-    { icon: SiDart, name: "Dart", color: "#0175C2" },
-    { icon: SiPhp, name: "PHP", color: "#777BB4" },
-    { icon: SiMysql, name: "MySQL", color: "#4479A1" },
+    { icon: SiDocker, name: "Docker", color: "#2496ED" },
+    { icon: SiNextdotjs, name: "Nextjs", color: "#000000" },
+    { icon: SiKubernetes, name: "Kubernetes", color: "#326CE5" },
     { icon: SiNodedotjs, name: "Node.js", color: "#339933" },
     { icon: SiMongodb, name: "MongoDB", color: "#47A248" },
+    { icon: FaAws, name: "AWS", color: "#FF9900" },
   ];
 
   const containerVariants = {
@@ -58,24 +61,9 @@ function Languages() {
         >
           <motion.h2 className="text-4xl font-bold mb-4 inline-block">
             <span className="bg-gradient-to-r from-purple-500 to-cyan-400 text-transparent bg-clip-text">
-              About Me
+              Languages and Frameworks
             </span>
           </motion.h2>
-          <motion.p
-            className="text-gray-400 max-w-3xl mx-auto text-lg leading-relaxed"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ delay: 0.2, duration: 0.5 }}
-          >
-            My name is Planwi Victor Baridakara. I'm a Computer Science
-            Graduate. I'm a Full-Stack developer with expertise in website,
-            application and smart contract development and a technical writer. I
-            produce detailed technical articles on topics such as self-growth,
-            and development (including websites, applications, decentralized
-            applications, and smart contracts). I love to get new experiences
-            and always learn from my surroundings. I look forward to any
-            opportunities and challenges. I use the following technologies
-          </motion.p>
         </motion.div>
 
         <motion.div
