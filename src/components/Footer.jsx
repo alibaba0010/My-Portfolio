@@ -56,9 +56,9 @@ const Footer = () => {
           </p>
 
           <div className="flex items-center justify-center flex-wrap gap-4">
-            {socialLinks.map((social) => (
+            {socialLinks.map((social, index) => (
               <motion.a
-                key={social.label}
+                key={index}
                 href={social.url}
                 target="_blank"
                 rel="noopener noreferrer"

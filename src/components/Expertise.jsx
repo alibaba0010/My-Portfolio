@@ -1,31 +1,33 @@
 import { motion } from "framer-motion";
-import { FaAtom, FaTools, FaCity, FaFileAlt } from "react-icons/fa";
+import { FaAtom, FaServer, FaCity, FaCogs } from "react-icons/fa";
 
 function Expertise() {
   const expertiseAreas = [
     {
-      icon: FaAtom,
-      title: "Web Development",
+      icon: FaServer,
+      title: "Backend Developement",
       description:
-        "I design, build and maintain dynamic and responsive websites. I design visually appealing and responsive user interfaces using HTML, CSS, Bootstrap, JavaScript and React while implementing efficient server-side applications and databases with PHP and MySQL. With a strong focus on responsive design and performance optimization, I deploy web applications, manage databases, and document my code.",
+        "I architect and implement robust server-side applications using advanced Node.js frameworks and microservices architectures. My technical foundation centers on developing scalable APIs and services using Express.js for lightweight applications and NestJS for enterprise-grade solutions, incorporating TypeScript to ensure type safety and code reliability.In database architecture, I leverage both SQL and NoSQL solutions, implementing PostgreSQL for complex relational data structures and MongoDB for flexible, document-based storage requirements. My expertise includes designing optimized database schemas, implementing efficient query patterns, and maintaining data integrity across distributed systems.My development approach incorporates GraphQL to create flexible, efficient APIs that reduce network overhead and enhance frontend-backend communication. I implement comprehensive authentication systems, rate limiting, caching strategies, and security measures to ensure robust application performance and data protection.Through systematic application of software engineering principles, I develop maintainable codebases with comprehensive test coverage, detailed API documentation, and efficient error handling mechanisms. My experience encompasses the complete backend development lifecycle, from system architecture design through deployment and performance optimization, always prioritizing scalability and maintainability.",
     },
     {
-      icon: FaTools,
-      title: "App Development",
+      icon: FaAtom,
+      title: "Software Development",
       description:
-        "I build applications that run on mobile devices, computers, or other platforms. I engage with you to comprehend your project objectives and bring your ideas to life. Leveraging Flutter and Dart (The Cross Platform Language) I code robust and user-friendly mobile applications integrating the best features with your demanded features.",
+        " I specialize in developing and maintaining enterprise-grade software solutions, with comprehensive expertise across the full technology stack. My frontend development approach centers on creating sophisticated user interfaces using React, leveraging its component architecture alongside modern JavaScript practices to ensure optimal performance and scalability. For backend systems, I implement robust server-side solutions using PHP and MySQL, with particular attention to database optimization and system architecture.y development methodology emphasizes code quality and performance optimization at every stage. This includes implementing comprehensive testing strategies, establishing efficient CI/CD pipelines, and maintaining detailed technical documentation to support long-term maintainability. I consistently deliver solutions that not only meet immediate business requirements but are also architected for future scalability and enhancement.Through strategic application of industry best practices and emerging technologies, I ensure all applications are secure, performant, and aligned with business objectives. My experience encompasses the complete software development lifecycle, from initial architecture design through deployment and ongoing maintenance, always prioritizing code quality and system reliability     ",
     },
+
+    {
+      icon: FaCogs,
+      title: "DevOps Engineering",
+      description:
+        "I specialize in designing and implementing robust cloud infrastructure solutions, with deep expertise in AWS services and modern DevOps practices. My experience encompasses architecting highly available and scalable systems using containerization technologies, including Docker and Kubernetes, while maintaining strict security protocols and cost optimization strategies.In AWS environments, I implement infrastructure as code using Terraform and CloudFormation, managing complex multi-account architectures and establishing secure networking configurations. I design and maintain CI/CD pipelines using GitHub Actions, enabling automated testing, security scanning, and deployment processes that significantly reduce time-to-market while ensuring code quality and reliability.My approach to container orchestration leverages Kubernetes for managing microservices architectures, implementing auto-scaling policies, and ensuring high availability across multiple availability zones. I establish comprehensive monitoring and alerting systems using tools like CloudWatch and Prometheus, enabling proactive incident response and system optimization.Through strategic implementation of DevOps best practices, I streamline development workflows, enhance system reliability, and maintain robust disaster recovery procedures. My focus extends beyond technical implementation to include documentation of infrastructure configurations, security protocols, and operational procedures, ensuring knowledge transfer and maintaining operational excellence.",
+    },
+
     {
       icon: FaCity,
-      title: "Smart Contract Development",
+      title: "Web3 Development",
       description:
-        "I design, build, and implement decentralized applications (dApps) and smart contracts on blockchain technology such as Ethereum Blockchain. I define and execute smart contract logic, ensuring the secure and efficient execution of decentralized protocols. My expertise includes coding in React and Solidity, integrating blockchain networks, and deploying smart contracts.",
-    },
-    {
-      icon: FaFileAlt,
-      title: "Technical Writing",
-      description:
-        "I write about self-growth, development(website, application decentralized applications and smart contract) and blockchain in a clear and understandable manner. I distill complex technical information into clear, concise, and user-friendly documentation. As a developer I create comprehensive guides, manuals and online content that effectively communicate intricate concepts, Software functionalities, blockchain technology and procedural information.",
+        "I specialize in developing decentralized applications (dApps) and smart contracts across multiple blockchain ecosystems, with comprehensive expertise in both Ethereum and Move-based protocols. My proficiency encompasses architecting secure smart contracts using Solidity and Move, implementing complex tokenomics systems, and creating seamless web3 user experiences through React-based frontends.In smart contract development, I implement robust security practices including formal verification, comprehensive testing frameworks, and adherence to established patterns. My experience includes developing and auditing DeFi protocols, NFT marketplaces, and cross-chain applications while ensuring optimal gas efficiency and transaction throughput.Leveraging Move's resource-oriented programming model, I develop secure and efficient smart contracts for platforms like Sui and Aptos, implementing advanced features such as custom resources and parallel transaction execution. My development approach incorporates thorough security considerations, including protection against common attack vectors and implementation of access control mechanisms.On the frontend, I create intuitive dApp interfaces using React, integrating web3 libraries and wallet connections while maintaining a seamless user experience. My expertise extends to implementing efficient state management for blockchain data, handling transaction lifecycles, and managing real-time updates through event listeners.Through systematic application of blockchain development best practices, I ensure all solutions maintain the highest standards of security, efficiency, and user experience while adhering to the principles of decentralization.",
     },
   ];
 

@@ -13,7 +13,8 @@ import {
   SiMongodb,
   SiExpress,
   SiNestjs,
-  SiPostgresql
+  SiPostgresql,
+  SiGraphql
 } from "react-icons/si";
 import { FaAws } from "react-icons/fa";
 function Languages() {
@@ -25,6 +26,7 @@ function Languages() {
     { icon: SiExpress, name: "Express", color: "#000000" },
     { icon: SiNestjs, name: "NestJS", color: "#E0234E" },
     { icon: SiPostgresql, name: "PostgreSQL", color: "#336791" },
+    { icon: SiGraphql, name: "GraphQL", color: "#E10098" },
     { icon: SiReact, name: "React", color: "#61DAFB" },
     { icon: SiSolidity, name: "Solidity", color: "#363636" },
     { icon: SiDocker, name: "Docker", color: "#2496ED" },
