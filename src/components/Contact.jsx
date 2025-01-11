@@ -65,10 +65,7 @@ function Contact() {
   ];
 
   return (
-    <section className="relative py-20">
-      {/* Background Image */}
-      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-5" />
-
+    <section id="contact" className="relative py-20">
       <div className="container mx-auto px-4 relative">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

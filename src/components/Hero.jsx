@@ -1,9 +1,30 @@
-import { motion } from "framer-motion";
+"use client";
+
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import BackgroundAnimation from "./BgAnimation";
 
 function Hero() {
+  const [roleIndex, setRoleIndex] = useState(0);
+  const roles = ["Technical Writer", "Software Developer", "DevOps Engineer"];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setRoleIndex((prev) => (prev + 1) % roles.length);
+    }, 3000); // Change role every 3 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const scrollToAbout = () => {
+    const aboutSection = document.getElementById("about");
+    if (aboutSection) {
+      aboutSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
-    <section className="relative py-20 md:py-32 overflow-hidden">
+    <section className="relative py-12 md:py-16 overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <motion.div
@@ -12,48 +33,65 @@ function Hero() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
           >
+            <motion.p
+              className="text-sm uppercase tracking-wider text-gray-400 mb-4"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+            >
+              Welcome to my portfolio 😊
+            </motion.p>
             <motion.h1
-              className="text-5xl md:text-6xl font-bold text-white mb-6"
+              className="text-5xl md:text-6xl font-bold mb-4 tracking-tight"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
               <motion.span
-                className="inline-block"
-                whileHover={{ scale: 1.05 }}
+                className="block text-white font-sans"
+                whileHover={{ scale: 1.02 }}
                 transition={{ type: "spring", stiffness: 200 }}
               >
-                Welcome To
+                Hi, I'm <span className="text-[#0066ff]">Victor Pianwi</span>
               </motion.span>
-              <br />
-              <motion.span
-                className="inline-block gradient-text"
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-              >
-                My Personal Portfolio
+              <motion.span className="block text-white mt-2 h-[1.2em]">
+                a{" "}
+                <AnimatePresence mode="wait">
+                  <motion.span
+                    key={roleIndex}
+                    initial={{ y: 20, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    exit={{ y: -20, opacity: 0 }}
+                    transition={{ duration: 0.5 }}
+                    className="inline-block"
+                  >
+                    {roles[roleIndex]}
+                  </motion.span>
+                </AnimatePresence>
+                .
               </motion.span>
             </motion.h1>
             <motion.p
-              className="text-lg mb-8 text-gray-400"
+              className="text-lg mb-8 text-gray-400 max-w-2xl font-light"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
             >
-              The purpose of JavaScript Mastery is to help aspiring and
-              established developers to take their development skills to the
-              next level and build awesome apps.
+              I'm a Passionate Full-Stack developer from Nigeria with three
+              years of hands-on experience crafting and maintaining dynamic and
+              responsive solutions. I thrive on turning ideas into interactive
+              experiences.
             </motion.p>
             <motion.button
-              className="px-8 py-3 rounded-full bg-gradient-to-r from-purple-500 to-cyan-400 text-white font-medium relative group overflow-hidden gradient-border"
+              onClick={scrollToAbout}
+              className="px-8 py-3 bg-[#0066ff] text-white rounded-md font-medium hover:bg-[#0052cc] transition-colors"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <span className="relative z-10">Learn More</span>
+              My Resume
             </motion.button>
           </motion.div>
-          <div className="relative w-full h-full min-h-[300px] md:min-h-[500px]">
+          <div className="relative w-full h-full min-h-[300px] md:min-h-[400px]">
             <BackgroundAnimation />
           </div>
         </div>

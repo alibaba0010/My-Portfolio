@@ -47,7 +47,7 @@ function Projects() {
   };
 
   return (
-    <section className="py-20">
+    <section id="projects" className="py-20">
       <motion.h2 className="text-4xl font-bold mb-4 inline-block">
         <span className="bg-gradient-to-r from-purple-500 to-cyan-400 text-transparent bg-clip-text">
           My Projects

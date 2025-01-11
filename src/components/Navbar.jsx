@@ -1,9 +1,13 @@
+"use client";
+
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
+import { useActiveSection } from "../hooks/useActiveSection";
 
 function Navbar() {
   const [scrolled, setScrolled] = useState(false);
+  const activeSection = useActiveSection();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -12,6 +16,21 @@ function Navbar() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const navItems = [
+    { name: "About", href: "#about" },
+    { name: "Expertise", href: "#expertise" },
+    { name: "Projects", href: "#projects" },
+    { name: "Resume", href: "#resume" },
+    { name: "Contact", href: "#contact" },
+  ];
+
+  const handleNavClick = (href) => {
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <motion.nav
@@ -30,27 +49,48 @@ function Navbar() {
             className="flex items-center"
             whileHover={{ scale: 1.05 }}
           >
-            <a href="/" className="text-white text-xl font-semibold">
+            <a
+              href="#"
+              className="text-white text-xl font-semibold"
+              onClick={(e) => {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }}
+            >
               Portfolio
             </a>
           </motion.div>
 
           <div className="hidden md:block">
             <div className="flex items-center space-x-8">
-              {["Projects", "Technologies", "About"].map((item, index) => (
+              {navItems.map((item, index) => (
                 <motion.a
-                  key={item}
-                  href={`#${item.toLowerCase()}`}
-                  className="relative hover:text-white transition-colors"
+                  key={item.name}
+                  href={item.href}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNavClick(item.href);
+                  }}
+                  className={`relative hover:text-white transition-colors ${
+                    activeSection === item.href.slice(1)
+                      ? "text-[#0066ff]"
+                      : "text-gray-400"
+                  }`}
                   whileHover={{ scale: 1.1 }}
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3, delay: index * 0.1 }}
                 >
-                  {item}
+                  {item.name}
                   <motion.div
-                    className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-500 to-cyan-400"
-                    whileHover={{ width: "100%" }}
+                    className={`absolute -bottom-1 left-0 h-0.5 bg-[#0066ff] ${
+                      activeSection === item.href.slice(1) ? "w-full" : "w-0"
+                    }`}
+                    initial={false}
+                    animate={{
+                      width:
+                        activeSection === item.href.slice(1) ? "100%" : "0%",
+                    }}
                     transition={{ duration: 0.3 }}
                   />
                 </motion.a>
@@ -59,6 +99,7 @@ function Navbar() {
           </div>
 
           <div className="flex items-center space-x-4">
+            {/* <LanguageSelector /> */}
             {[
               { Icon: FaGithub, url: "https://github.com" },
               { Icon: FaLinkedin, url: "https://linkedin.com" },
