@@ -15,7 +15,7 @@ import {
   SiMongodb,
 } from "react-icons/si";
 
-function About() {
+function Languages() {
   const technologies = [
     { icon: SiHtml5, name: "HTML", color: "#E44D26" },
     { icon: SiCss3, name: "CSS", color: "#1572B6" },
@@ -108,4 +108,4 @@ function About() {
   );
 }
 
-export default About;
+export default Languages;

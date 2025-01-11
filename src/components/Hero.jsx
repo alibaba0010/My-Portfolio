@@ -6,7 +6,13 @@ import BackgroundAnimation from "./BgAnimation";
 
 function Hero() {
   const [roleIndex, setRoleIndex] = useState(0);
-  const roles = ["Technical Writer", "Software Developer", "DevOps Engineer"];
+  const roles = [
+    "Backend Engineer",
+    "Software Developer",
+    "Full Stack Developer",
+    "Web3 Developer",
+    "DevOps Engineer",
+  ];
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -39,7 +45,7 @@ function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              Welcome to my portfolio 😊
+              Welcome to my portfolio
             </motion.p>
             <motion.h1
               className="text-5xl md:text-6xl font-bold mb-4 tracking-tight"
@@ -52,7 +58,7 @@ function Hero() {
                 whileHover={{ scale: 1.02 }}
                 transition={{ type: "spring", stiffness: 200 }}
               >
-                Hi, I'm <span className="text-[#0066ff]">Victor Pianwi</span>
+                Hi, I'm <span className="text-[#0066ff]">Ali Zakariyah</span>
               </motion.span>
               <motion.span className="block text-white mt-2 h-[1.2em]">
                 a{" "}
@@ -77,10 +83,15 @@ function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
             >
-              I'm a Passionate Full-Stack developer from Nigeria with three
-              years of hands-on experience crafting and maintaining dynamic and
-              responsive solutions. I thrive on turning ideas into interactive
-              experiences.
+              A Software Engineer with three years of experience
+              architecting and delivering high-impact solutions, specializing in
+              building scalable applications that solve complex business
+              challenges. Based in Nigeria, I've developed a strong track record
+              of transforming abstract requirements into robust,
+              production-ready systems while maintaining a focus on code quality
+              and performance optimization. My approach combines technical
+              expertise with pragmatic problem-solving to create elegant
+              solutions that drive real business value..
             </motion.p>
             <motion.button
               onClick={scrollToAbout}

@@ -1,7 +1,7 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Projects from "./components/Projects";
-import About from "./components/About";
+import Languages from "./components/Languages";
 import Expertise from "./components/Expertise";
 import Resume from "./components/Resume";
 import Contact from "./components/Contact";
@@ -14,7 +14,7 @@ function App() {
       <Navbar />
       <main className="container mx-auto px-4 py-16 relative">
         <Hero />
-        <About />
+        <Languages />
         <Expertise />
         <Projects />
         <Resume />
