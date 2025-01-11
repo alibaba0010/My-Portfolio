@@ -5,6 +5,7 @@ import About from "./components/About";
 import Expertise from "./components/Expertise";
 import Resume from "./components/Resume";
 import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 function App() {
   return (
     <div className="min-h-screen bg-[#0a192f] text-gray-300 overflow-hidden">
@@ -18,6 +19,7 @@ function App() {
         <Projects />
         <Resume />
         <Contact />
+        <Footer />
       </main>
     </div>
   );
