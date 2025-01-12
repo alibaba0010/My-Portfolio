@@ -9,6 +9,7 @@ import {
   FaQuora,
   FaGithub,
   FaArrowCircleUp,
+  FaStackOverflow
 } from "react-icons/fa";
 const Footer = () => {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -29,16 +30,17 @@ const Footer = () => {
     });
   };
   const socialLinks = [
-    { icon: FaTwitter, url: "https://twitter.com/yourprofile" },
-    { icon: FaLinkedinIn, url: "https://linkedin.com/in/yourprofile" },
+    { icon: FaTwitter, url: "https://x.com/realalibaba00" },
+    { icon: FaLinkedinIn, url: "https://linkedin.com/in/ali-zakariyah-311067202/" },
     { icon: FaMediumM, url: "https://medium.com/@yourprofile" },
     { icon: FaCodepen, url: "https://codepen.io/yourprofile" },
-    { icon: FaQuora, url: "https://quora.com/profile/yourprofile" },
-    { icon: FaGithub, url: "https://github.com/yourprofile" },
+    { icon: FaQuora, url: "https://quora.com/profile/Ali-Baba-3277" },
+    { icon: FaGithub, url: "https://github.com/alibaba0010" },
+    { icon: FaStackOverflow, url: "https://stackoverflow.com/users/29166527/zakariyah-ali" },
   ];
 
   return (
-    <footer className="py-6 border-t border-gray-800">
+    <footer className="border-t border-gray-800">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-gray-400 text-sm">
