@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
+import { FaGithub, FaLinkedin,  FaTwitter } from "react-icons/fa";
 import { useActiveSection } from "../hooks/useActiveSection";
 
 function Navbar() {
@@ -13,8 +13,8 @@ function Navbar() {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
     };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    addEventListener("scroll", handleScroll);
+    return () => removeEventListener("scroll", handleScroll);
   }, []);
 
   const navItems = [
@@ -46,9 +46,14 @@ function Navbar() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           <motion.div
-            className="flex items-center"
+            className="flex items-center space-x-3"
             whileHover={{ scale: 1.05 }}
           >
+            <img
+              src="https://avatars.githubusercontent.com/u/99949368?s=400&u=1432b592835855d2d820eb523db4740c99cc8114&v=4"
+              alt="Profile"
+              className="w-10 h-10 rounded-full border-2 border-[#0066ff]"
+            />
             <a
               href="#"
               className="text-white text-xl font-semibold"
@@ -57,7 +62,7 @@ function Navbar() {
                 window.scrollTo({ top: 0, behavior: "smooth" });
               }}
             >
-              Portfolio
+              Ali Zakariyah
             </a>
           </motion.div>
 
@@ -99,11 +104,10 @@ function Navbar() {
           </div>
 
           <div className="flex items-center space-x-4">
-            {/* <LanguageSelector /> */}
             {[
-              { Icon: FaGithub, url: "https://github.com" },
+              { Icon: FaGithub, url: "https://github.com/alibaba0010" },
               { Icon: FaLinkedin, url: "https://linkedin.com" },
-              { Icon: FaInstagram, url: "https://instagram.com" },
+              { Icon: FaTwitter, url: "https://instagram.com" },
             ].map(({ Icon, url }, index) => (
               <motion.a
                 key={url}
@@ -127,3 +131,4 @@ function Navbar() {
 }
 
 export default Navbar;
+

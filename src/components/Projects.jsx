@@ -63,7 +63,7 @@ function Projects() {
     },
     {
       id: 4,
-      title: "E-Commerce",
+      title: "ALX Quiz APP",
       image:
         "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%20from%202025-01-09%2023-47-33-cVrH7LzMj61scQdSpUDyCJrBHlrGaL.png",
       description:
