@@ -14,7 +14,9 @@ import {
   SiExpress,
   SiNestjs,
   SiPostgresql,
-  SiGraphql
+  SiGraphql,
+  SiTypeorm,
+  SiPrisma,
 } from "react-icons/si";
 import { FaAws } from "react-icons/fa";
 function Languages() {
@@ -35,6 +37,8 @@ function Languages() {
     { icon: SiNodedotjs, name: "Node.js", color: "#339933" },
     { icon: SiMongodb, name: "MongoDB", color: "#47A248" },
     { icon: FaAws, name: "AWS", color: "#FF9900" },
+    { icon: SiTypeorm, name: "TypeORM", color: "#FF0000" },
+    { icon: SiPrisma, name: "Prisma", color: "#2D3748" },
   ];
 
   const containerVariants = {

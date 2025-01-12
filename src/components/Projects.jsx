@@ -1,16 +1,56 @@
 import { motion } from "framer-motion";
 import { FaReact, FaNode } from "react-icons/fa";
-import { SiMongodb, SiExpress, SiJavascript } from "react-icons/si";
+import {
+  SiMongodb,
+  SiExpress,
+  SiJavascript,
+  SiNodedotjs,
+  SiDocker,
+  SiNextdotjs,
+  SiNestjs,
+  SiPrisma,
+} from "react-icons/si";
 
 function Projects() {
   const projects = [
     {
       id: 1,
-      title: "MERN Memories",
-      image:
-        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%20from%202025-01-09%2023-47-33-cVrH7LzMj61scQdSpUDyCJrBHlrGaL.png",
+      title: "E-Commerce API",
+      image: "/images/ecommerce.png",
       description:
-        "Using React, Node.js, Express & MongoDB you'll learn how to build a Full Stack MERN Application - from start to finish. The App is called Memories and it is a simple social media app that allows users to post interesting events that happened in their lives.",
+        "A scalable E-commerce RESTful API built with Node.js and Express, featuring comprehensive product management, cart functionality, and secure payment processing. Implements robust user authentication, order tracking, and inventory management using MongoDB for flexible data storage. Containerized with Docker for consistent deployment and scalability, with automated testing and API documentation using Postman.",
+      stack: ["React", "JavaScript"],
+      icons: [
+        <SiNodedotjs key="Node" />,
+        <SiExpress key="Express" />,
+        <SiMongodb key=" MongoDB" />,
+        <SiDocker key="docker" />,
+      ],
+      code: "https://github.com/alibaba0010/Ecommerce-API",
+      source: "https://ecommerce-api-zn59.onrender.com",
+    },
+    {
+      id: 2,
+      title: "Auth-services",
+      image: "/images/auth.png",
+      description:
+        "A comprehensive authentication service implementing secure user management with JWT tokens, OAuth integration, and role-based access control. The system features email verification, password recovery, and multi-factor authentication, built using Next.js for the frontend and NestJS for a scalable backend architecture. Leverages MongoDB for flexible data storage and Prisma ORM for type-safe database operations, ensuring robust security practices and efficient user session management.",
+      stack: ["React", "JavaScript"],
+      icons: [
+        <SiNextdotjs key="next" />,
+        <SiNestjs key="Nest" />,
+        <SiMongodb key="Mongodb" />,
+        <SiPrisma key="Prisma" />,
+      ],
+      code: "https://github.com/alibaba0010/Auth-Services",
+      source: "https://auth-services-alpha.vercel.app",
+    },
+    {
+      id: 3,
+      title: "MERN Memories",
+      image: "/images/mern.png",
+      description:
+        "Using React, Node.js, Express & MongoDB, this is a Full Stack MERN Application called Memories and it is a simple social media app that allows users to post interesting events that happened in their lives.",
       stack: ["Mongo", "Express", "React", "Node"],
       icons: [
         <SiMongodb key="mongo" />,
@@ -18,9 +58,11 @@ function Projects() {
         <FaReact key="react" />,
         <FaNode key="node" />,
       ],
+      code: "https://github.com/alibaba0010/Mern-Memories",
+      source: "https://mern-memories-alpha.vercel.app/",
     },
     {
-      id: 2,
+      id: 4,
       title: "E-Commerce",
       image:
         "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%20from%202025-01-09%2023-47-33-cVrH7LzMj61scQdSpUDyCJrBHlrGaL.png",
@@ -104,8 +146,11 @@ function Projects() {
               </div>
               <div className="flex space-x-4">
                 {["Code", "Source"].map((button) => (
-                  <motion.button
+                  <motion.a
                     key={button}
+                    href={project[button.toLowerCase()]}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="px-6 py-2 bg-[#233554] rounded-md relative overflow-hidden group"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
@@ -117,7 +162,7 @@ function Projects() {
                       animate={{ opacity: 0 }}
                       whileHover={{ opacity: 1 }}
                     />
-                  </motion.button>
+                  </motion.a>
                 ))}
               </div>
             </div>
@@ -129,3 +174,4 @@ function Projects() {
 }
 
 export default Projects;
+
