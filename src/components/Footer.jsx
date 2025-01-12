@@ -2,17 +2,12 @@ import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 import {
-  FaWhatsapp,
-  FaFacebookF,
-  FaInstagram,
   FaTwitter,
   FaLinkedinIn,
   FaMediumM,
   FaCodepen,
   FaQuora,
-  FaSlack,
   FaGithub,
-  FaYoutube,
   FaArrowCircleUp,
 } from "react-icons/fa";
 const Footer = () => {
@@ -34,17 +29,12 @@ const Footer = () => {
     });
   };
   const socialLinks = [
-    { icon: FaWhatsapp, url: "https://wa.me/yourwhatsapp" },
-    { icon: FaFacebookF, url: "https://facebook.com/yourprofile" },
-    { icon: FaInstagram, url: "https://instagram.com/yourprofile" },
     { icon: FaTwitter, url: "https://twitter.com/yourprofile" },
     { icon: FaLinkedinIn, url: "https://linkedin.com/in/yourprofile" },
     { icon: FaMediumM, url: "https://medium.com/@yourprofile" },
     { icon: FaCodepen, url: "https://codepen.io/yourprofile" },
     { icon: FaQuora, url: "https://quora.com/profile/yourprofile" },
-    { icon: FaSlack, url: "https://slack.com/yourprofile" },
     { icon: FaGithub, url: "https://github.com/yourprofile" },
-    { icon: FaYoutube, url: "https://youtube.com/c/yourprofile" },
   ];
 
   return (
@@ -52,7 +42,7 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-gray-400 text-sm">
-            © Copyright {new Date().getFullYear()} - Victor Pianwi
+            © Copyright {new Date().getFullYear()} - Ali Zakariyah
           </p>
 
           <div className="flex items-center justify-center flex-wrap gap-4">
