@@ -73,20 +73,17 @@ function Contact() {
   const contactInfo = [
     {
       icon: FaEnvelope,
-      title: "Email Me",
-      content: "victorpianwi@gmail.com",
-      href: "mailto:victorpianwi@gmail.com",
+      content: "zakariyahali100@gmail.com",
+      href: "mailto:zakariyahali100@gmail.com",
     },
   ];
 
   return (
     <section id="contact" className="relative py-20">
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-5"
-      />
+      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-5" />
 
       <div className="container mx-auto px-4 relative">
-      <motion.div
+        <motion.div
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
@@ -100,9 +97,7 @@ function Contact() {
               Contact Me
             </span>
           </motion.h2>
-          <motion.div
-            className="h-1 bg-gradient-to-r from-purple-500 to-cyan-400 mx-auto w-24"
-          />
+          <motion.div className="h-1 bg-gradient-to-r from-purple-500 to-cyan-400 mx-auto w-24" />
         </motion.div>
 
         <div className="max-w-4xl mx-auto backdrop-blur-sm">
@@ -113,7 +108,7 @@ function Contact() {
             onSubmit={handleSubmit}
             className="space-y-6"
           >
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="space-y-4">
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -169,10 +164,10 @@ function Contact() {
               transition={{ duration: 0.5, delay: 0.4 }}
               className="text-center"
             >
-              <button
+               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="px-8 py-3 bg-[#0066ff] text-white rounded-md font-medium hover:bg-[#0052cc] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                className="px-8 py-3 bg-gradient-to-r from-purple-500 to-cyan-400 text-white rounded-full font-medium hover:opacity-90 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? "Sending..." : "Send Message"}
               </button>
@@ -183,7 +178,7 @@ function Contact() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.5 }}
-            className="mt-16 grid md:grid-cols-3 gap-8"
+            className="mt-8 flex justify-center"
           >
             {contactInfo.map((info, index) => (
               <motion.a
@@ -203,10 +198,8 @@ function Contact() {
                 <div className="w-12 h-12 bg-[#0066ff] text-white rounded-lg flex items-center justify-center mb-4 group-hover:bg-[#0052cc] transition-colors">
                   <info.icon className="w-6 h-6" />
                 </div>
-                <h3 className="text-lg font-semibold text-white mb-2">
-                  {info.title}
-                </h3>
-                <p className="text-gray-400 hover:text-[#0066ff] transition-colors">
+
+                <p className="text-xl text-gray-400 hover:text-[#0066ff] transition-colors">
                   {info.content}
                 </p>
               </motion.a>
