@@ -97,7 +97,7 @@ function Hero() {
               systems while maintaining a focus on code quality and performance
               optimization. My approach combines technical expertise with
               pragmatic problem-solving to create elegant solutions that drive
-              real business value..
+              real business value.
             </motion.p>
             <motion.button
               onClick={scrollToAbout}
