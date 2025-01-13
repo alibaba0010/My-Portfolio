@@ -64,12 +64,16 @@ function Projects() {
     {
       id: 4,
       title: "ALX Quiz APP",
-      image:
-        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%20from%202025-01-09%2023-47-33-cVrH7LzMj61scQdSpUDyCJrBHlrGaL.png",
+      image: "/images/quiz.png",
       description:
-        "While building it you're going to learn many advanced React & JavaScript topics, as well as how to use Stripe for card transactions. On top of that, at the end of the video, you will have this unique and complex webshop app that you will be able to add to your portfolio.",
+        "A full-stack quiz application focused on scalable assessment delivery and performance tracking. Built with a microservices architecture to handle concurrent user sessions and real-time scoring. Implements adaptive difficulty algorithms and comprehensive analytics for user progression tracking. Features include JWT-based authentication, WebSocket integration for live updates, and caching strategies for optimal performance. The system maintains detailed metrics on user engagement and question effectiveness, enabling data-driven refinements to the assessment engine.",
       stack: ["React", "JavaScript"],
-      icons: [<FaReact key="react" />, <SiJavascript key="js" />],
+      icons: [
+        <SiNodedotjs key="nodejs" />,
+        <SiExpress key="express" />,
+        <SiMongodb key="mongo" />,
+        <SiJavascript key="js" />,
+      ],
     },
   ];
 
@@ -174,4 +178,3 @@ function Projects() {
 }
 
 export default Projects;
-
