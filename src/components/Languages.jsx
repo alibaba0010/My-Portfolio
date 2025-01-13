@@ -17,6 +17,7 @@ import {
   SiGraphql,
   SiTypeorm,
   SiPrisma,
+  SiTypescript,
 } from "react-icons/si";
 import { FaAws } from "react-icons/fa";
 function Languages() {
@@ -25,6 +26,7 @@ function Languages() {
     { icon: SiCss3, name: "CSS", color: "#1572B6" },
     { icon: SiTailwindcss, name: "Tailwind CSS", color: "#06B6D4" },
     { icon: SiJavascript, name: "JavaScript", color: "#F7DF1E" },
+    { icon: SiTypescript, name: "typescript", color: "#3178C6" },
     { icon: SiExpress, name: "Express", color: "#000000" },
     { icon: SiNestjs, name: "NestJS", color: "#E0234E" },
     { icon: SiPostgresql, name: "PostgreSQL", color: "#336791" },
