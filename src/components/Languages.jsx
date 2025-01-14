@@ -20,13 +20,14 @@ import {
   SiTypescript,
 } from "react-icons/si";
 import { FaAws } from "react-icons/fa";
+
 function Languages() {
   const technologies = [
     { icon: SiHtml5, name: "HTML", color: "#E44D26" },
     { icon: SiCss3, name: "CSS", color: "#1572B6" },
     { icon: SiTailwindcss, name: "Tailwind CSS", color: "#06B6D4" },
     { icon: SiJavascript, name: "JavaScript", color: "#F7DF1E" },
-    { icon: SiTypescript, name: "typescript", color: "#3178C6" },
+    { icon: SiTypescript, name: "TypeScript", color: "#3178C6" },
     { icon: SiExpress, name: "Express", color: "#000000" },
     { icon: SiNestjs, name: "NestJS", color: "#E0234E" },
     { icon: SiPostgresql, name: "PostgreSQL", color: "#336791" },
@@ -34,7 +35,7 @@ function Languages() {
     { icon: SiReact, name: "React", color: "#61DAFB" },
     { icon: SiSolidity, name: "Solidity", color: "#363636" },
     { icon: SiDocker, name: "Docker", color: "#2496ED" },
-    { icon: SiNextdotjs, name: "Nextjs", color: "#000000" },
+    { icon: SiNextdotjs, name: "Next.js", color: "#000000" },
     { icon: SiKubernetes, name: "Kubernetes", color: "#326CE5" },
     { icon: SiNodedotjs, name: "Node.js", color: "#339933" },
     { icon: SiMongodb, name: "MongoDB", color: "#47A248" },
@@ -63,14 +64,14 @@ function Languages() {
     show: {
       width: "100%",
       transition: {
-        duration: 0.8,
-        ease: "easeOut",
-        delay: 0.2,
+        duration: 1.5,
+        ease: "easeInOut",
       },
     },
   };
+
   return (
-    <section id="about" className="py-20 relative">
+    <section id="languages" className="py-20 relative">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -84,8 +85,15 @@ function Languages() {
             </span>
           </motion.h2>
           <motion.div
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
             variants={underlineVariants}
-            className="h-1 bg-gradient-to-r from-purple-500 to-cyan-400 mx-auto w-24"
+            className="h-1 bg-gradient-to-r from-purple-500 to-cyan-400 mx-auto"
+            style={{
+              maxWidth: "80%",
+              width: "calc(80% - 2rem)",
+            }}
           />
         </motion.div>
 
@@ -94,7 +102,7 @@ function Languages() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 max-w-4xl mx-auto"
+          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8 max-w-6xl mx-auto"
         >
           {technologies.map((tech, index) => (
             <motion.div
@@ -105,10 +113,10 @@ function Languages() {
               transition={{ type: "spring", stiffness: 300 }}
             >
               <tech.icon
-                className="w-16 h-16 transition-colors duration-300"
+                className="w-12 h-12 sm:w-16 sm:h-16 transition-colors duration-300"
                 style={{ color: tech.color }}
               />
-              <span className="text-gray-400 text-sm font-medium">
+              <span className="text-gray-400 text-xs sm:text-sm font-medium text-center">
                 {tech.name}
               </span>
             </motion.div>
@@ -120,3 +128,4 @@ function Languages() {
 }
 
 export default Languages;
+
