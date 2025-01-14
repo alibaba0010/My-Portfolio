@@ -30,7 +30,7 @@ function Hero() {
   };
 
   return (
-    <section className="relative py-12 md:py-16 lg:py-20 xl:py-24 overflow-hidden">
+    <section id="about" className="relative py-12 md:py-16 lg:py-20 xl:py-24 overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           <motion.div
