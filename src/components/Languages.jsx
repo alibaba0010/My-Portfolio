@@ -58,6 +58,17 @@ function Languages() {
     show: { opacity: 1, y: 0 },
   };
 
+  const underlineVariants = {
+    hidden: { width: "0%" },
+    show: {
+      width: "100%",
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+        delay: 0.2,
+      },
+    },
+  };
   return (
     <section id="about" className="py-20 relative">
       <div className="container mx-auto px-4">
@@ -72,6 +83,10 @@ function Languages() {
               Languages and Frameworks
             </span>
           </motion.h2>
+          <motion.div
+            variants={underlineVariants}
+            className="h-1 bg-gradient-to-r from-purple-500 to-cyan-400 mx-auto w-24"
+          />
         </motion.div>
 
         <motion.div
