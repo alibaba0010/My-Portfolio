@@ -94,11 +94,14 @@ function Projects() {
 
   return (
     <section id="projects" className="py-20">
+      <div className="text-center mb-12">
+
       <motion.h2 className="text-4xl font-bold mb-4 inline-block">
         <span className="bg-gradient-to-r from-purple-500 to-cyan-400 text-transparent bg-clip-text">
           My Projects
         </span>
       </motion.h2>
+      </div>
       <motion.div
         className="grid md:grid-cols-2 gap-8"
         variants={containerVariants}

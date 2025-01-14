@@ -92,7 +92,7 @@ function Languages() {
             className="h-1 bg-gradient-to-r from-purple-500 to-cyan-400 mx-auto"
             style={{
               maxWidth: "80%",
-              width: "calc(80% - 2rem)",
+              width: "calc(80% - 6rem)",
             }}
           />
         </motion.div>
