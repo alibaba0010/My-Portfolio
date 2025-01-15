@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { FaGithub, FaLinkedin,  FaTwitter } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { useActiveSection } from "../hooks/useActiveSection";
 
 function Navbar() {
@@ -106,8 +106,11 @@ function Navbar() {
           <div className="flex items-center space-x-4">
             {[
               { Icon: FaGithub, url: "https://github.com/alibaba0010" },
-              { Icon: FaLinkedin, url: "https://linkedin.com" },
-              { Icon: FaTwitter, url: "https://instagram.com" },
+              {
+                Icon: FaLinkedin,
+                url: "https://linkedin.com/in/ali-zakariyah-311067202/",
+              },
+              { Icon: FaTwitter, url: "https://x.com/realalibaba001" },
             ].map(({ Icon, url }, index) => (
               <motion.a
                 key={url}
@@ -131,4 +134,3 @@ function Navbar() {
 }
 
 export default Navbar;
-

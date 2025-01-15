@@ -9,7 +9,7 @@ import {
   FaQuora,
   FaGithub,
   FaArrowCircleUp,
-  FaStackOverflow
+  FaStackOverflow,
 } from "react-icons/fa";
 
 const Footer = () => {
@@ -32,13 +32,19 @@ const Footer = () => {
   };
 
   const socialLinks = [
-    { icon: FaTwitter, url: "https://x.com/realalibaba00" },
-    { icon: FaLinkedinIn, url: "https://linkedin.com/in/ali-zakariyah-311067202/" },
+    { icon: FaTwitter, url: "https://x.com/realalibaba001" },
+    {
+      icon: FaLinkedinIn,
+      url: "https://linkedin.com/in/ali-zakariyah-311067202/",
+    },
     { icon: FaMediumM, url: "https://medium.com/@yourprofile" },
     { icon: FaCodepen, url: "https://codepen.io/yourprofile" },
     { icon: FaQuora, url: "https://quora.com/profile/Ali-Baba-3277" },
     { icon: FaGithub, url: "https://github.com/alibaba0010" },
-    { icon: FaStackOverflow, url: "https://stackoverflow.com/users/29166527/zakariyah-ali" },
+    {
+      icon: FaStackOverflow,
+      url: "https://stackoverflow.com/users/29166527/zakariyah-ali",
+    },
   ];
 
   return (
@@ -87,4 +93,3 @@ const Footer = () => {
 };
 
 export default Footer;
-
