@@ -45,7 +45,7 @@ function Resume() {
       id: 1,
       title: "ALX Final Year Project",
       date: "October 2024 - October 2024",
-      link: "github.com/alibabanero/ALX_QUIZ_APP",
+      link: "github.com/alibaba0010/ALX_QUIZ_APP",
       description: [
         "Implemented a scalable software solution for the ALX Final Year Project using Node.js, MongoDB, HTML, CSS(Lucide) and JavaScript",
         "Achieving a 95% success rate in meeting project objectives and incorporating advanced technologies such as Google OAuth and third party API",
@@ -57,7 +57,7 @@ function Resume() {
       id: 2,
       title: "E-commerce API",
       date: "July 2022 - October 2023",
-      link: "github.com/alibabanero/Ecommerce-API",
+      link: "github.com/alibaba0010/Ecommerce-API",
       description: [
         "Developed and optimized E-commerce APIs using Node.js(Express) and MongoDB, allowing users to explore the world of e-commerce orders, product functionalities",
         "Implemented a comprehensive error handling such as custom exceptions, and custom error messages to ensure robust application behavior and provide clear feedback to users",
