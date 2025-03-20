@@ -21,6 +21,7 @@ import {
   SiTypeorm,
   SiPrisma,
   SiTypescript,
+  SiRust,
 } from "react-icons/si";
 import { FaAws } from "react-icons/fa";
 
@@ -45,6 +46,7 @@ function Languages() {
     { icon: FaAws, name: "AWS", color: "#FF9900" },
     { icon: SiTypeorm, name: "TypeORM", color: "#FF0000" },
     { icon: SiPrisma, name: "Prisma", color: "#2D3748" },
+    { icon: SiRust, name: "Rust", color: "#DEA584" },
   ];
 
   const [visibleRows, setVisibleRows] = useState(1);
