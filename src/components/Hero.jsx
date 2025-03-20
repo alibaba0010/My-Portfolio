@@ -30,7 +30,10 @@ function Hero() {
   };
 
   return (
-    <section id="about" className="relative py-12 md:py-16 lg:py-20 xl:py-24 overflow-hidden">
+    <section
+      id="about"
+      className="relative py-12 md:py-16 lg:py-20 xl:py-24 overflow-hidden"
+    >
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           <motion.div
@@ -108,7 +111,7 @@ function Hero() {
               My Resume
             </motion.button>
           </motion.div>
-          <div className="relative w-full h-full min-h-[300px] md:min-h-[400px] lg:min-h-[500px]">
+          <div className="relative w-full h-full min-h-[300px] md:min-h-[400px] lg:min-h-[500px] hidden lg:block">
             <BackgroundAnimation />
           </div>
         </div>
