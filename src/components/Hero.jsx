@@ -8,7 +8,7 @@ function Hero() {
   const [roleIndex, setRoleIndex] = useState(0);
   const roles = [
     "Backend Engineer",
-    "Software Developer",
+    "Software Engineer",
     "Full Stack Developer",
     "Web3 Developer",
     "DevOps Engineer",
