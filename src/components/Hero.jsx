@@ -22,8 +22,8 @@ function Hero() {
     return () => clearInterval(interval);
   }, []);
 
-  const scrollToAbout = () => {
-    const aboutSection = document.getElementById("about");
+  const scrollToResume = () => {
+    const aboutSection = document.getElementById("resume");
     if (aboutSection) {
       aboutSection.scrollIntoView({ behavior: "smooth" });
     }
@@ -72,16 +72,9 @@ function Hero() {
                     animate={{ y: 0, opacity: 1 }}
                     exit={{ y: -20, opacity: 0 }}
                     transition={{ duration: 0.5 }}
-                    className="inline-block"
+                    className="inline-block text-2xl sm:text-3xl md:text-4xl lg:text-5xl whitespace-nowrap"
                   >
-                    <span className="hidden sm:inline">{roles[roleIndex]}</span>
-                    <span className="sm:hidden">
-                      {roles[roleIndex].split(" ").map((word, i) => (
-                        <span key={i} className="block">
-                          {word}
-                        </span>
-                      ))}
-                    </span>
+                    {roles[roleIndex]}
                   </motion.span>
                 </AnimatePresence>
               </motion.span>
@@ -103,7 +96,7 @@ function Hero() {
               real business value.
             </motion.p>
             <motion.button
-              onClick={scrollToAbout}
+              onClick={scrollToResume}
               className="px-6 sm:px-8 py-2 sm:py-3 bg-[#0066ff] text-white rounded-md font-medium hover:bg-[#0052cc] transition-colors"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
