@@ -63,7 +63,7 @@ function Hero() {
               >
                 Hi, I'm <span className="text-[#0066ff]">Ali Zakariyah</span>
               </motion.span>
-              <motion.span className="block text-white mt-2">
+              <motion.span className="block text-white mt-2 sm:text-3xl md:text-4xl lg:text-5xl">
                 a{" "}
                 <AnimatePresence mode="wait">
                   <motion.span
