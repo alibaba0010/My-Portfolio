@@ -86,22 +86,6 @@ function Projects() {
       code: "https://github.com/alibaba0010/ALX-Quiz-App",
       source: "https://alx-quiz-app.vercel.app",
     },
-    {
-      id: 5,
-      title: "ALX Quiz APP",
-      image: "/images/quiz.png",
-      description:
-        "A full-stack quiz application focused on scalable assessment delivery and performance tracking. Built with a microservices architecture to handle concurrent user sessions and real-time scoring. Implements adaptive difficulty algorithms and comprehensive analytics for user progression tracking. Features include JWT-based authentication, WebSocket integration for live updates, and caching strategies for optimal performance. The system maintains detailed metrics on user engagement and question effectiveness, enabling data-driven refinements to the assessment engine.",
-      stack: ["React", "JavaScript"],
-      icons: [
-        <SiNodedotjs key="nodejs" />,
-        <SiExpress key="express" />,
-        <SiMongodb key="mongo" />,
-        <SiJavascript key="js" />,
-      ],
-      code: "https://github.com/alibaba0010/ALX-Quiz-App",
-      source: "https://alx-quiz-app.vercel.app",
-    },
   ];
 
   useEffect(() => {
