@@ -1,39 +1,83 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { useState, useEffect, useRef } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { useActiveSection } from "../hooks/useActiveSection";
+import { useLocation } from "react-router-dom";
 
 function Navbar() {
   const [scrolled, setScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navRef = useRef(null);
   const activeSection = useActiveSection();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
     };
+
+    const handleClickOutside = (event) => {
+      if (navRef.current && !navRef.current.contains(event.target)) {
+        setIsMenuOpen(false);
+      }
+    };
+
     addEventListener("scroll", handleScroll);
-    return () => removeEventListener("scroll", handleScroll);
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      removeEventListener("scroll", handleScroll);
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
   }, []);
 
-  const navItems = [
-    { name: "About", href: "#about" },
-    { name: "Expertise", href: "#expertise" },
-    { name: "Projects", href: "#projects" },
-    { name: "Resume", href: "#resume" },
-    { name: "Contact", href: "#contact" },
-  ];
+  const getNavItems = () => {
+    if (location.pathname === "/articles") {
+      return [
+        { name: "Profile", href: "/" },
+        { name: "Articles", href: "/articles" },
+        { name: "Projects", href: "/projects" },
+      ];
+    } else if (location.pathname === "/projects") {
+      return [
+        { name: "Profile", href: "/" },
+        { name: "Projects", href: "/projects" },
+        { name: "Articles", href: "/articles" },
+      ];
+    }
+    return [
+      { name: "About", href: "#about" },
+      { name: "Expertise", href: "#expertise" },
+      { name: "Projects", href: "#projects" },
+      { name: "Resume", href: "#resume" },
+      { name: "Contact", href: "#contact" },
+      { name: "Articles", href: "/articles" },
+    ];
+  };
 
   const handleNavClick = (href) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+    if (href.startsWith("#")) {
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      // Use navigate for non-hash routes
+      window.location.href = href;
     }
   };
 
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  const navItems = getNavItems();
+
   return (
     <motion.nav
+      ref={navRef}
       className={`fixed w-full z-50 transition-colors duration-300 ${
         scrolled
           ? "bg-[#0a192f]/90 backdrop-blur-sm shadow-lg"
@@ -46,8 +90,14 @@ function Navbar() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           <motion.div
-            className="flex items-center space-x-3"
+            className="flex items-center space-x-3 cursor-pointer"
             whileHover={{ scale: 1.05 }}
+            onClick={() => {
+              if (window.innerWidth <= 1024) {
+                // Changed from 768 to 1024 for tablet support
+                toggleMenu();
+              }
+            }}
           >
             <img
               src="https://avatars.githubusercontent.com/u/99949368?s=400&u=1432b592835855d2d820eb523db4740c99cc8114&v=4"
@@ -66,7 +116,8 @@ function Navbar() {
             </a>
           </motion.div>
 
-          <div className="hidden md:block">
+          {/* Desktop Navigation */}
+          <div className="hidden lg:block">
             <div className="flex items-center space-x-8">
               {navItems.map((item, index) => (
                 <motion.a
@@ -77,7 +128,11 @@ function Navbar() {
                     handleNavClick(item.href);
                   }}
                   className={`relative hover:text-white transition-colors ${
-                    activeSection === item.href.slice(1)
+                    // Update this condition to handle both hash and regular routes
+                    (item.href.startsWith("#") &&
+                      activeSection === item.href.slice(1)) ||
+                    (!item.href.startsWith("#") &&
+                      location.pathname === item.href)
                       ? "text-[#0066ff]"
                       : "text-gray-400"
                   }`}
@@ -89,12 +144,22 @@ function Navbar() {
                   {item.name}
                   <motion.div
                     className={`absolute -bottom-1 left-0 h-0.5 bg-[#0066ff] ${
-                      activeSection === item.href.slice(1) ? "w-full" : "w-0"
+                      (item.href.startsWith("#") &&
+                        activeSection === item.href.slice(1)) ||
+                      (!item.href.startsWith("#") &&
+                        location.pathname === item.href)
+                        ? "w-full"
+                        : "w-0"
                     }`}
                     initial={false}
                     animate={{
                       width:
-                        activeSection === item.href.slice(1) ? "100%" : "0%",
+                        (item.href.startsWith("#") &&
+                          activeSection === item.href.slice(1)) ||
+                        (!item.href.startsWith("#") &&
+                          location.pathname === item.href)
+                          ? "100%"
+                          : "0%",
                     }}
                     transition={{ duration: 0.3 }}
                   />
@@ -103,6 +168,45 @@ function Navbar() {
             </div>
           </div>
 
+          {/* Mobile Navigation Dropdown */}
+          <AnimatePresence>
+            {isMenuOpen && (
+              <motion.div
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.2 }}
+                className="absolute top-20 left-0 right-0 bg-[#0a192f] shadow-lg lg:hidden" // Changed from md:hidden to lg:hidden
+              >
+                <div className="px-4 py-2 space-y-2">
+                  {navItems.map((item) => (
+                    <motion.a
+                      key={item.name}
+                      href={item.href}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        handleNavClick(item.href);
+                        setIsMenuOpen(false);
+                      }}
+                      className={`block py-2 px-4 rounded-md transition-colors ${
+                        (item.href.startsWith("#") &&
+                          activeSection === item.href.slice(1)) ||
+                        (!item.href.startsWith("#") &&
+                          location.pathname === item.href)
+                          ? "text-[#0066ff] bg-[#112240]"
+                          : "text-gray-400 hover:bg-[#112240]"
+                      }`}
+                      whileHover={{ x: 10 }}
+                    >
+                      {item.name}
+                    </motion.a>
+                  ))}
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+
+          {/* Social Icons */}
           <div className="flex items-center space-x-4">
             {[
               { Icon: FaGithub, url: "https://github.com/alibaba0010" },

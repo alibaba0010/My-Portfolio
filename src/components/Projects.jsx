@@ -13,8 +13,14 @@ import {
   SiNestjs,
   SiPrisma,
 } from "react-icons/si";
+import Link from "next/link"; // Replace useRouter with Link
+import { useLocation } from "react-router-dom"; // Add this import
 
 function Projects() {
+  // Remove the router declaration
+  const [itemsPerRow, setItemsPerRow] = useState(2);
+  const location = useLocation(); // Add this line
+  const isProjectsPage = location.pathname === "/projects";
   const projects = [
     {
       id: 1,
@@ -80,36 +86,40 @@ function Projects() {
       code: "https://github.com/alibaba0010/ALX-Quiz-App",
       source: "https://alx-quiz-app.vercel.app",
     },
+    {
+      id: 5,
+      title: "ALX Quiz APP",
+      image: "/images/quiz.png",
+      description:
+        "A full-stack quiz application focused on scalable assessment delivery and performance tracking. Built with a microservices architecture to handle concurrent user sessions and real-time scoring. Implements adaptive difficulty algorithms and comprehensive analytics for user progression tracking. Features include JWT-based authentication, WebSocket integration for live updates, and caching strategies for optimal performance. The system maintains detailed metrics on user engagement and question effectiveness, enabling data-driven refinements to the assessment engine.",
+      stack: ["React", "JavaScript"],
+      icons: [
+        <SiNodedotjs key="nodejs" />,
+        <SiExpress key="express" />,
+        <SiMongodb key="mongo" />,
+        <SiJavascript key="js" />,
+      ],
+      code: "https://github.com/alibaba0010/ALX-Quiz-App",
+      source: "https://alx-quiz-app.vercel.app",
+    },
   ];
 
-  const [showAll, setShowAll] = useState(false);
-  const [itemsPerRow, setItemsPerRow] = useState(2);
-
-  // Update items per row based on screen size
   useEffect(() => {
     const handleResize = () => {
-      // On mobile (< 768px), we show 1 item per row
-      // On larger screens (≥ 768px), we show 2 items per row (md:grid-cols-2)
-      setItemsPerRow(window.innerWidth < 768 ? 1 : 2);
+      setItemsPerRow(2);
     };
 
-    handleResize(); // Set initial value
+    handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Calculate how many projects to show initially (2 rows)
-  const initialProjectCount = itemsPerRow * 2;
-
-  // Get visible projects based on showAll state
-  const visibleProjects = showAll
+  const initialProjectCount = 2;
+  const visibleProjects = isProjectsPage
     ? projects
     : projects.slice(0, initialProjectCount);
 
-  // Handle show more/hide button click
-  const handleToggleVisibility = () => {
-    setShowAll(!showAll);
-  };
+  // Remove handleViewAllProjects function as we'll use Link component instead
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -133,7 +143,7 @@ function Projects() {
         <div className="text-center mb-12">
           <motion.h2 className="text-4xl font-bold mb-4 inline-block">
             <span className="bg-gradient-to-r from-purple-500 to-cyan-400 text-transparent bg-clip-text">
-              My Projects
+              {isProjectsPage ? "All Projects" : "My Projects"}
             </span>
           </motion.h2>
         </div>
@@ -233,16 +243,17 @@ function Projects() {
         </motion.div>
 
         {/* Show More/Hide Button - only show if there are more than 2 rows of projects */}
-        {projects.length > initialProjectCount && (
+        {!isProjectsPage && projects.length > initialProjectCount && (
           <div className="flex justify-center mt-10">
-            <motion.button
-              onClick={handleToggleVisibility}
-              className="px-6 py-2 bg-gradient-to-r from-purple-500 to-cyan-400 text-white rounded-md font-medium hover:opacity-90 transition-all"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              {showAll ? "Show Less" : "Show More"}
-            </motion.button>
+            <Link href="/projects">
+              <motion.div
+                className="px-6 py-2 bg-gradient-to-r from-purple-500 to-cyan-400 text-white rounded-md font-medium hover:opacity-90 transition-all cursor-pointer"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                View All Projects
+              </motion.div>
+            </Link>
           </div>
         )}
       </div>
