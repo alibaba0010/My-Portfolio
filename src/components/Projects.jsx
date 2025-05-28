@@ -96,14 +96,14 @@ function Projects() {
                 <div className="mb-4">
                   <h4 className="text-sm text-gray-500 mb-2">Stack</h4>
                   <div className="flex space-x-4">
-                    {project.icons.map((icon, index) => (
+                    {Object.entries(project.icons).map(([name, Icon]) => (
                       <motion.div
-                        key={index}
+                        key={name}
                         className="text-2xl text-gray-400"
                         whileHover={{ scale: 1.2, rotate: 5 }}
                         transition={{ type: "spring", stiffness: 300 }}
                       >
-                        {icon}
+                        <Icon />
                       </motion.div>
                     ))}
                   </div>
