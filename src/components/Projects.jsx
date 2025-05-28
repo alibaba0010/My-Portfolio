@@ -2,91 +2,16 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { FaReact, FaNode } from "react-icons/fa";
-import {
-  SiMongodb,
-  SiExpress,
-  SiJavascript,
-  SiNodedotjs,
-  SiDocker,
-  SiNextdotjs,
-  SiNestjs,
-  SiPrisma,
-} from "react-icons/si";
+
 import Link from "next/link"; // Replace useRouter with Link
 import { useLocation } from "react-router-dom"; // Add this import
+import { projects } from "../utils/projects";
 
 function Projects() {
   // Remove the router declaration
   const [itemsPerRow, setItemsPerRow] = useState(2);
   const location = useLocation(); // Add this line
   const isProjectsPage = location.pathname === "/projects";
-  const projects = [
-    {
-      id: 1,
-      title: "E-Commerce API",
-      image: "/images/ecommerce.png",
-      description:
-        "A scalable E-commerce RESTful API built with Node.js and Express, featuring comprehensive product management, cart functionality, and secure payment processing. Implements robust user authentication, order tracking, and inventory management using MongoDB for flexible data storage. Containerized with Docker for consistent deployment and scalability, with automated testing and API documentation using Postman.",
-      stack: ["React", "JavaScript"],
-      icons: [
-        <SiNodedotjs key="Node" />,
-        <SiExpress key="Express" />,
-        <SiMongodb key=" MongoDB" />,
-        <SiDocker key="docker" />,
-      ],
-      code: "https://github.com/alibaba0010/Ecommerce-API",
-      source: "https://ecommerce-api-zn59.onrender.com",
-    },
-    {
-      id: 2,
-      title: "Auth-services",
-      image: "/images/auth.png",
-      description:
-        "A comprehensive authentication service implementing secure user management with JWT tokens, OAuth integration, and role-based access control. The system features email verification, password recovery, and multi-factor authentication, built using Next.js for the frontend and NestJS for a scalable backend architecture. Leverages MongoDB for flexible data storage and Prisma ORM for type-safe database operations, ensuring robust security practices and efficient user session management.",
-      stack: ["React", "JavaScript"],
-      icons: [
-        <SiNextdotjs key="next" />,
-        <SiNestjs key="Nest" />,
-        <SiMongodb key="Mongodb" />,
-        <SiPrisma key="Prisma" />,
-      ],
-      code: "https://github.com/alibaba0010/Auth-Services",
-      source: "https://auth-services-alpha.vercel.app",
-    },
-    {
-      id: 3,
-      title: "MERN Memories",
-      image: "/images/mern.png",
-      description:
-        "Using React, Node.js, Express & MongoDB, this is a Full Stack MERN Application called Memories and it is a simple social media app that allows users to post interesting events that happened in their lives.",
-      stack: ["Mongo", "Express", "React", "Node"],
-      icons: [
-        <SiMongodb key="mongo" />,
-        <SiExpress key="express" />,
-        <FaReact key="react" />,
-        <FaNode key="node" />,
-      ],
-      code: "https://github.com/alibaba0010/Mern-Memories",
-      source: "https://mern-memories-alpha.vercel.app/",
-    },
-    {
-      id: 4,
-      title: "ALX Quiz APP",
-      image: "/images/quiz.png",
-      description:
-        "A full-stack quiz application focused on scalable assessment delivery and performance tracking. Built with a microservices architecture to handle concurrent user sessions and real-time scoring. Implements adaptive difficulty algorithms and comprehensive analytics for user progression tracking. Features include JWT-based authentication, WebSocket integration for live updates, and caching strategies for optimal performance. The system maintains detailed metrics on user engagement and question effectiveness, enabling data-driven refinements to the assessment engine.",
-      stack: ["React", "JavaScript"],
-      icons: [
-        <SiNodedotjs key="nodejs" />,
-        <SiExpress key="express" />,
-        <SiMongodb key="mongo" />,
-        <SiJavascript key="js" />,
-      ],
-      code: "https://github.com/alibaba0010/ALX-Quiz-App",
-      source: "https://alx-quiz-app.vercel.app",
-    },
-  ];
 
   useEffect(() => {
     const handleResize = () => {
