@@ -39,6 +39,16 @@ const articles = [
     tags: ["DevOps", "CI/CD", "Infrastructure", "Cloud Architecture"],
     previewImage: "/images/articles/hng-stage4.png",
   },
+  {
+    id: 5,
+    title: "Deep Dive into testing using Artillery",
+    description:
+      "An extensive guide on using Artillery for performance testing and load testing of web applications. This article covers installation, configuration, writing test scripts, and analyzing results to ensure your applications can handle high traffic efficiently.",
+    date: "2025-07-17",
+    link: "https://better-industry-1b1.notion.site/Deep-Dive-Into-Testing-with-Artillery-233e5a96047980d2a150d5b6d33b0b61",
+    tags: ["Testing", "Performance", "Artillery", "Load Testing"],
+    previewImage: "/images/articles/artillery-load-testing.png",
+  },
 ];
 
 export default articles;
