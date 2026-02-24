@@ -85,8 +85,8 @@ function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
             >
-              A Software Engineer with three years of experience architecting
-              and delivering high-impact solutions, specializing in building
+              A Software Engineer with four years of experience architecting and
+              delivering high-impact solutions, specializing in building
               scalable applications that solve complex business challenges.
               Based in Nigeria, I've developed a strong track record of
               transforming abstract requirements into robust, production-ready
