@@ -18,7 +18,7 @@ import {
 export const projects = [
   {
     id: 1,
-    title: "GourmetHub — Restaurant Management API",
+    title: "GourmetHub — Restaurant Management APP",
     image: "/images/projects/restaurant-mgt.png",
     description:
       "A production-grade REST API powering comprehensive restaurant management with end-to-end order processing, multi-provider payment integration, and real-time event streaming. Built with Go 1.24, PostgreSQL, and Redpanda (Kafka-compatible), this system implements pessimistic locking for concurrent order handling, JWT-based RBAC authentication, and automatic service charge calculations. Features AWS S3 media management, Redis caching with SHA-256 hashing, webhook deduplication for payment providers (Paystack, Monnify, Flutterwave), and graceful shutdown patterns. Delivers event-driven architecture for asynchronous order and payment workflows with structured logging, rate limiting, and OpenAPI documentation.",
