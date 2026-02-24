@@ -29,8 +29,8 @@ export const projects = [
       Redis: SiRedis,
       Docker: SiDocker,
     },
-    code: "https://github.com/alibaba0010/postgres-api",
-    source: "https://github.com/alibaba0010/postgres-api",
+    code: "https://github.com/alibaba0010/Restaurant_Mangement",
+    source: "https://github.com/alibaba0010/Restaurant-Management-UI",
   },
   {
     id: 2,
