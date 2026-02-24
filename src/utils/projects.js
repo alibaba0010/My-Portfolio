@@ -10,11 +10,30 @@ import {
   SiPrisma,
   SiSui,
   SiCloudinary,
+  SiPostgresql,
+  SiRedis,
+  SiGo,
 } from "react-icons/si";
 
 export const projects = [
   {
     id: 1,
+    title: "GourmetHub — Restaurant Management API",
+    image: "/images/projects/restaurant-mgt.png",
+    description:
+      "A production-grade REST API powering comprehensive restaurant management with end-to-end order processing, multi-provider payment integration, and real-time event streaming. Built with Go 1.24, PostgreSQL, and Redpanda (Kafka-compatible), this system implements pessimistic locking for concurrent order handling, JWT-based RBAC authentication, and automatic service charge calculations. Features AWS S3 media management, Redis caching with SHA-256 hashing, webhook deduplication for payment providers (Paystack, Monnify, Flutterwave), and graceful shutdown patterns. Delivers event-driven architecture for asynchronous order and payment workflows with structured logging, rate limiting, and OpenAPI documentation.",
+    stack: ["Go", "PostgreSQL", "Redis", "Redpanda"],
+    icons: {
+      Go: SiGo,
+      PostgreSQL: SiPostgresql,
+      Redis: SiRedis,
+      Docker: SiDocker,
+    },
+    code: "https://github.com/alibaba0010/postgres-api",
+    source: "https://github.com/alibaba0010/postgres-api",
+  },
+  {
+    id: 2,
     title: "E-Commerce API",
     image: "/images/projects/ecommerce.png",
     description:
@@ -30,7 +49,7 @@ export const projects = [
     source: "https://ecommerce-api-zn59.onrender.com",
   },
   {
-    id: 2,
+    id: 3,
     title: "Auth-services",
     image: "/images/projects/auth.png",
     description:
@@ -46,7 +65,7 @@ export const projects = [
     source: "https://auth-services-alpha.vercel.app",
   },
   {
-    id: 3,
+    id: 4,
     title: "MERN Memories",
     image: "/images/projects/mern.png",
     description:
@@ -62,15 +81,11 @@ export const projects = [
     source: "https://mern-memories-alpha.vercel.app/",
   },
   {
-    id: 4,
+    id: 5,
     title: "SuiPay",
     image: "/images/projects/suipay.png",
     description:
-      "SuiPay is a decentralized payment platform built on the Sui blockchain, designed to facilitate secure and \
-      efficient transactions using SUI tokens. It leverages the unique capabilities of the Sui blockchain to provide a \
-      seamless user experience, enabling instant transfers, low transaction fees, and robust security features. The platform \
-      supports various payment methods, including peer-to-peer transfers and merchant payments, with a focus on scalability and \
-      user-friendly interfaces.",
+      "SuiPay is a decentralized payment platform built on the Sui blockchain, designed to facilitate secure and efficient transactions using SUI tokens. It leverages the unique capabilities of the Sui blockchain to provide a seamless user experience, enabling instant transfers, low transaction fees, and robust security features. The platform supports various payment methods, including peer-to-peer transfers and merchant payments, with a focus on scalability and user-friendly interfaces.",
     stack: ["Mongo", "Next", "Sui"],
     icons: {
       Mongo: SiMongodb,
@@ -81,7 +96,7 @@ export const projects = [
     source: "https://sui-pay-hackathon.vercel.app/",
   },
   {
-    id: 5,
+    id: 6,
     title: "Summer Memories",
     image: "/images/projects/summer-memories.png",
     description:
@@ -97,7 +112,7 @@ export const projects = [
     source: "https://summer-memories-beta.vercel.app/",
   },
   {
-    id: 6,
+    id: 7,
     title: "ALX Quiz APP",
     image: "/images/projects/quiz.png",
     description:
