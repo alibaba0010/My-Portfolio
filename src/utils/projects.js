@@ -13,11 +13,29 @@ import {
   SiPostgresql,
   SiRedis,
   SiGo,
+  SiTypescript,
+  SiSolidity,
 } from "react-icons/si";
 
 export const projects = [
   {
     id: 1,
+    title: "Hedera RWA — Real Estate Marketplace",
+    image: "/images/projects/hedera-rwa.png",
+    description:
+      "A decentralized Real World Asset (RWA) marketplace built on the Hedera blockchain, enabling tokenization and trading of real estate properties. The platform leverages Hedera Token Service (HTS) to represent fractional ownership of physical assets as on-chain tokens, making real estate investment accessible to a broader audience. Features include property listing with IPFS-stored metadata, smart-contract-powered transfers, wallet authentication, and live transaction tracking via HashScan. Built with React and Hedera's SDK for a seamless Web3 user experience.",
+    stack: ["React", "TypeScript", "Solidity", "Hedera"],
+    icons: {
+      React: FaReact,
+      TypeScript: SiTypescript,
+      Solidity: SiSolidity,
+      JavaScript: SiJavascript,
+    },
+    code: "https://github.com/alibaba0010/Hedera-RWA",
+    source: "https://hedera-rwa.vercel.app/",
+  },
+  {
+    id: 2,
     title: "GourmetHub — Restaurant Management APP",
     image: "/images/projects/restaurant-mgt.png",
     description:
@@ -33,7 +51,7 @@ export const projects = [
     source: "https://github.com/alibaba0010/Restaurant-Management-UI",
   },
   {
-    id: 2,
+    id: 3,
     title: "E-Commerce API",
     image: "/images/projects/ecommerce.png",
     description:
@@ -49,7 +67,7 @@ export const projects = [
     source: "https://ecommerce-api-zn59.onrender.com",
   },
   {
-    id: 3,
+    id: 4,
     title: "Auth-services",
     image: "/images/projects/auth.png",
     description:
@@ -65,7 +83,7 @@ export const projects = [
     source: "https://auth-services-alpha.vercel.app",
   },
   {
-    id: 4,
+    id: 5,
     title: "MERN Memories",
     image: "/images/projects/mern.png",
     description:
@@ -81,7 +99,7 @@ export const projects = [
     source: "https://mern-memories-alpha.vercel.app/",
   },
   {
-    id: 5,
+    id: 6,
     title: "SuiPay",
     image: "/images/projects/suipay.png",
     description:
@@ -96,7 +114,7 @@ export const projects = [
     source: "https://sui-pay-hackathon.vercel.app/",
   },
   {
-    id: 6,
+    id: 7,
     title: "Summer Memories",
     image: "/images/projects/summer-memories.png",
     description:
@@ -112,7 +130,7 @@ export const projects = [
     source: "https://summer-memories-beta.vercel.app/",
   },
   {
-    id: 7,
+    id: 8,
     title: "ALX Quiz APP",
     image: "/images/projects/quiz.png",
     description:
