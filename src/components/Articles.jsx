@@ -101,14 +101,23 @@ function Articles() {
                       ))}
                     </div>
 
-                    <a
-                      href={article.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-1 text-cyan-400 hover:text-cyan-300 transition-colors"
-                    >
-                      View Article <FiArrowUpRight className="inline-block" />
-                    </a>
+                    {article.isInternal ? (
+                      <Link
+                        to={`/articles/${article.id}`}
+                        className="flex items-center gap-1 text-cyan-400 hover:text-cyan-300 transition-colors"
+                      >
+                        Read Article <FiArrowUpRight className="inline-block" />
+                      </Link>
+                    ) : (
+                      <a
+                        href={article.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-1 text-cyan-400 hover:text-cyan-300 transition-colors"
+                      >
+                        View Article <FiArrowUpRight className="inline-block" />
+                      </a>
+                    )}
                   </div>
                 </div>
               </article>

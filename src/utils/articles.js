@@ -49,6 +49,15 @@ const articles = [
     tags: ["Testing", "Performance", "Artillery", "Load Testing"],
     previewImage: "/images/articles/artillery-load-testing.png",
   },
+  {
+    id: "74381861-18ae-4f28-912b-df4d4ab2734a",
+    title: "Mastering Data Relationships: How We Handle Joins in Our Go + Bun ORM Architecture",
+    description: "A deep dive into how our Restaurant Management project handles SQL joins using Bun ORM's .Relation() method.",
+    date: "April 8 2026",
+    isInternal: true,
+    tags: ["Go", "Bun ORM", "SQL", "Database", "Backend"],
+    previewImage: "/images/articles/go-bun-orm.png",
+  },
 ];
 
 export default articles;

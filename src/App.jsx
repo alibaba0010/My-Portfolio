@@ -8,6 +8,7 @@ import Resume from "./components/Resume";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Articles from "./components/Articles";
+import ArticleDetail from "./components/ArticleDetail";
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
             />
             <Route path="/projects" element={<Projects />} />
             <Route path="/articles" element={<Articles />} />
+            <Route path="/articles/:id" element={<ArticleDetail />} />
           </Routes>
           <Footer />
         </main>
