@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import emailjs from "@emailjs/browser";
 import {
   FaComments,
   FaTimes,
@@ -19,23 +20,35 @@ function Contact() {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isChatOpen, setIsChatOpen] = useState(false);
+  const [status, setStatus] = useState({ type: "", message: "" });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setStatus({ type: "", message: "" });
+
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+    if (!serviceId || !templateId || !publicKey) {
+      setStatus({
+        type: "error",
+        message: "Email service is not configured. Please check environment variables.",
+      });
+      setIsSubmitting(false);
+      return;
+    }
 
     try {
-      // const response = await fetch('/api/send-email', {
-      //   method: 'POST',
-      //   headers: {
-      //     'Content-Type': 'application/json',
-      //   },
-      //   body: JSON.stringify(formData),
-      // });
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        message: formData.message,
+        to_name: "Ali Zakariyah", // You can change this or make it dynamic
+      };
 
-      // if (!response.ok) {
-      //   throw new Error('Failed to send email');
-      // }
+      await emailjs.send(serviceId, templateId, templateParams, publicKey);
 
       // Reset form
       setFormData({
@@ -43,10 +56,13 @@ function Contact() {
         email: "",
         message: "",
       });
-      alert("Message sent successfully!");
+      setStatus({ type: "success", message: "Message sent successfully!" });
     } catch (error) {
       console.error("Error:", error);
-      alert("Failed to send message. Please try again.");
+      setStatus({
+        type: "error",
+        message: "Failed to send message. Please try again later.",
+      });
     } finally {
       setIsSubmitting(false);
     }
@@ -157,6 +173,20 @@ function Contact() {
                 className="w-full px-4 py-3 bg-[#112240] rounded-lg border border-gray-700 focus:border-[#0066ff] focus:ring-2 focus:ring-[#0066ff]/20 transition-colors text-white placeholder-gray-400 resize-none"
               />
             </motion.div>
+
+            {status.message && (
+              <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className={`p-4 rounded-lg text-center ${
+                  status.type === "success"
+                    ? "bg-green-500/20 text-green-400 border border-green-500/50"
+                    : "bg-red-500/20 text-red-400 border border-red-500/50"
+                }`}
+              >
+                {status.message}
+              </motion.div>
+            )}
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}

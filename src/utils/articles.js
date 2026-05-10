@@ -58,6 +58,15 @@ const articles = [
     tags: ["Go", "Bun ORM", "SQL", "Database", "Backend"],
     previewImage: "/images/articles/go-bun-orm.png",
   },
+  {
+    id: "83f81861-18ae-4f28-912b-df4d4ab2734a",
+    title: "From REST to State Changes: Decoding Solana Transactions",
+    description: "A deep dive into how my mental model shifted from traditional Web2 request/response paradigms to Web3 atomic state changes, and what breaking Solana transactions taught me.",
+    date: "May 10 2026",
+    isInternal: true,
+    tags: ["Solana", "Blockchain", "Web3", "100DaysOfSolana"],
+    previewImage: "/images/articles/solana-transaction.png",
+  },
 ];
 
 export default articles;

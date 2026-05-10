@@ -125,5 +125,60 @@ By standardizing around Bun's declarative \`.Relation()\` loading rather than ha
 Keep writing great code, and if you ever get stuck pulling complex multi-table graphs out of Postgres, remember that \`.Relation()\` is your best friend!
 
 — *Your Friendly Neighborhood Senior Writer*
+`,
+  "83f81861-18ae-4f28-912b-df4d4ab2734a": `
+# From REST to State Changes: Decoding Solana Transactions
+
+If you’re coming from a traditional backend background like I did, you're probably intimately familiar with the classic API lifecycle: your client sends an HTTP request, the server processes it against a database, and you get a JSON response back. 
+
+It’s comfortable. It’s stateless. It’s what we know.
+
+But over the past few days of diving into Solana development, I quickly realized that taking this Web2 mental model into Web3 is a recipe for confusion. On Solana, you aren't "calling an API." You are crafting an **atomic state change** on a global state machine.
+
+Here is a breakdown of what I learned from building, sending, and deliberately breaking Solana transactions.
+
+---
+
+## 🧩 The Anatomy of a Transaction
+
+In Web2, a payload is just JSON. In Solana, a transaction is a highly structured, cryptographically signed envelope. The core components that really clicked for me were:
+
+1. **Instructions:** This is the actual "meat" of the transaction. An instruction tells a specific program (like a smart contract) exactly what to do. Crucially, a single transaction can contain *multiple* instructions, and they are guaranteed to either all succeed or all fail together.
+2. **Signatures:** You can't just pass a JWT in an \`Authorization\` header. Every transaction must be mathematically signed by the keypairs of the accounts whose data or tokens are being modified. 
+3. **Accounts:** Solana requires you to explicitly declare every single piece of state (Account) that your transaction will read from or write to upfront. Imagine having to tell your Postgres database exactly which rows you intend to touch before you run a query!
+4. **Recent Blockhash:** This was the biggest surprise. Solana transactions expire!
+
+---
+
+## ⏳ The "Recent Blockhash" Expiration Window
+
+In traditional systems, if a queue gets backed up, your job might sit there for an hour before being processed. 
+
+On Solana, transactions include a **recent blockhash**—a unique identifier of a very recent ledger state. If the network doesn't process your transaction within about 60 to 90 seconds (a 150-block window), the blockhash expires and the transaction is permanently dropped. 
+
+When I first encountered a \`BlockhashNotFound\` error during my devnet testing, it felt like a bug. But I soon realized it’s a brilliant feature: it prevents transactions from floating in limbo forever. If a transaction failed, you *know* it failed quickly, allowing your application to confidently retry without fear of double-spending.
+
+---
+
+## 💥 Breaking Things on Purpose: Failed Transactions
+
+You learn the most when things break. I spent an afternoon specifically crafting invalid transactions to see how the network would reject them. 
+
+One major lesson came from **Compute Budgets**. Solana programs have a strict limit on how much computational power they can consume. When I tried to run an artificially heavy instruction, the network threw a \`ComputeExceeded\` error. 
+
+This made me appreciate Solana's predictable fee structure. Because developers must explicitly declare state and stay within compute limits, the network can parallelize execution—which is exactly how Solana achieves its insane throughput.
+
+---
+
+## 🚀 The Mental Model Shift
+
+The biggest takeaway for me this week wasn't just learning the syntax of \`@solana/web3.js\`. It was the conceptual shift:
+
+*   **Web2:** "Hey server, please update my database row."
+*   **Web3:** "Hey network, here is a signed, time-boxed, computationally-capped declaration of how I am modifying these specific cryptographic accounts. Execute it atomically."
+
+If you are a backend developer starting your blockchain journey, my advice is to let go of the request/response crutch early. Embrace the atomic state machine. Build transactions, read the explorer logs, and don't be afraid to break things on devnet.
+
+*Have you experienced a similar paradigm shift moving to Web3? Let me know!*
 `
 };
