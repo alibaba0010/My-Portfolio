@@ -15,11 +15,29 @@ import {
   SiGo,
   SiTypescript,
   SiSolidity,
+  SiSolana,
+  SiRust,
 } from "react-icons/si";
 
 export const projects = [
   {
     id: 1,
+    title: "PayLink — Web3 Payroll & Payment Infrastructure",
+    image: "/images/projects/paylink.png",
+    description:
+      "A high-performance, on-chain payroll and payment infrastructure protocol built on Solana, designed for remote and gig workers. Features reusable personalized payment links, automated group payroll streams via Program-Derived Addresses (PDAs), gasless claim architecture leveraging a custom fee-payer relayer, and instant local currency (Naira) off-ramps. Integrates Circle's Cross-Chain Transfer Protocol (CCTP) to enable EVM-to-Solana mirror payments, reducing transaction fees to under 1% and achieving sub-second settlement.",
+    stack: ["Solana", "Rust", "Next.js", "PostgreSQL"],
+    icons: {
+      Solana: SiSolana,
+      Rust: SiRust,
+      Next: SiNextdotjs,
+      Postgres: SiPostgresql,
+    },
+    code: "https://github.com/alibaba0010/Paylink",
+    source: "https://paylink-brown.vercel.app/",
+  },
+  {
+    id: 2,
     title: "Hedera RWA — Real Estate Marketplace",
     image: "/images/projects/hedera-rwa.png",
     description:
@@ -35,7 +53,7 @@ export const projects = [
     source: "https://hedera-rwa.vercel.app/",
   },
   {
-    id: 2,
+    id: 3,
     title: "GourmetHub — Restaurant Management APP",
     image: "/images/projects/restaurant-mgt.png",
     description:
@@ -51,7 +69,7 @@ export const projects = [
     source: "https://github.com/alibaba0010/Restaurant-Management-UI",
   },
   {
-    id: 3,
+    id: 4,
     title: "E-Commerce API",
     image: "/images/projects/ecommerce.png",
     description:
@@ -67,7 +85,7 @@ export const projects = [
     source: "https://ecommerce-api-zn59.onrender.com",
   },
   {
-    id: 4,
+    id: 5,
     title: "Auth-services",
     image: "/images/projects/auth.png",
     description:
@@ -83,7 +101,7 @@ export const projects = [
     source: "https://auth-services-alpha.vercel.app",
   },
   {
-    id: 5,
+    id: 6,
     title: "MERN Memories",
     image: "/images/projects/mern.png",
     description:
@@ -99,7 +117,7 @@ export const projects = [
     source: "https://mern-memories-alpha.vercel.app/",
   },
   {
-    id: 6,
+    id: 7,
     title: "SuiPay",
     image: "/images/projects/suipay.png",
     description:
@@ -114,7 +132,7 @@ export const projects = [
     source: "https://sui-pay-hackathon.vercel.app/",
   },
   {
-    id: 7,
+    id: 8,
     title: "Summer Memories",
     image: "/images/projects/summer-memories.png",
     description:
@@ -130,7 +148,7 @@ export const projects = [
     source: "https://summer-memories-beta.vercel.app/",
   },
   {
-    id: 8,
+    id: 9,
     title: "ALX Quiz APP",
     image: "/images/projects/quiz.png",
     description:

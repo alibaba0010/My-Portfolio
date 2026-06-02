@@ -67,6 +67,18 @@ function Resume() {
   const projects = [
     {
       id: 1,
+      title: "PayLink (Solana Payroll Protocol)",
+      date: "April 2025 - May 2025",
+      link: "paylink-brown.vercel.app",
+      description: [
+        "Architected a high-performance Web3 payroll system using Rust and Anchor on Solana, enabling secure payroll streams via PDAs.",
+        "Built a robust Next.js frontend integrated with custom fee-payer relayers for a seamless gasless claim experience.",
+        "Developed a Node.js/Fastify backend integrated with Circle CCTP to facilitate EVM-to-Solana mirror payments and local NGN fiat off-ramps.",
+        "Designed an automated reputation scoring algorithm (Tiers S-C) based on user transaction volume, activity, and trust metrics.",
+      ],
+    },
+    {
+      id: 2,
       title: "Ticketing Platform",
       date: "June 2023 - December 2023",
       link: "github.com/alibaba0010/Ticketing-APP",
@@ -79,7 +91,7 @@ function Resume() {
       ],
     },
     {
-      id: 2,
+      id: 3,
       title: "Auth Services",
       date: "November 2024 - January 2025",
       link: "auth-services-alpha.vercel.app",
@@ -91,7 +103,7 @@ function Resume() {
       ],
     },
     {
-      id: 3,
+      id: 4,
       title: "E-commerce API",
       date: "July 2022 - October 2023",
       link: "github.com/alibaba0010/Ecommerce-API",
@@ -102,7 +114,7 @@ function Resume() {
       ],
     },
     {
-      id: 4,
+      id: 5,
       title: "ALX Final Year Project",
       date: "October 2024",
       link: "github.com/alibaba0010/ALX_QUIZ_APP",
@@ -114,7 +126,7 @@ function Resume() {
       ],
     },
     {
-      id: 5,
+      id: 6,
       title: "Blockchain CrowdFunding Platform",
       date: "February 2025 - March 2025",
       link: "crowdfund-app-rho.vercel.app",
