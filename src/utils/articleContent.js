@@ -20,6 +20,7 @@ Bun ORM simplifies this by utilizing Go structs with relational tags (\`bun:"rel
 
 Let's look at how this plays out in our actual repositories.
 
+
 ---
 
 ## 🔍 Real-World Example 1: The \`Order\` Aggregator
@@ -180,5 +181,5 @@ The biggest takeaway for me this week wasn't just learning the syntax of \`@sola
 If you are a backend developer starting your blockchain journey, my advice is to let go of the request/response crutch early. Embrace the atomic state machine. Build transactions, read the explorer logs, and don't be afraid to break things on devnet.
 
 *Have you experienced a similar paradigm shift moving to Web3? Let me know!*
-`
+`,
 };
