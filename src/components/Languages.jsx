@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   SiHtml5,
-  SiCss3,
+  SiCss,
   SiTailwindcss,
   SiJavascript,
   SiReact,
@@ -28,7 +28,7 @@ import { FaAws } from "react-icons/fa";
 function Languages() {
   const technologies = [
     { icon: SiHtml5, name: "HTML", color: "#E44D26" },
-    { icon: SiCss3, name: "CSS", color: "#1572B6" },
+    { icon: SiCss, name: "CSS", color: "#1572B6" },
     { icon: SiTailwindcss, name: "Tailwind CSS", color: "#06B6D4" },
     { icon: SiJavascript, name: "JavaScript", color: "#F7DF1E" },
     { icon: SiTypescript, name: "TypeScript", color: "#3178C6" },
